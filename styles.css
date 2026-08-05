@@ -184,6 +184,17 @@ h2 {
   gap: 1rem;
 }
 
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  max-width: 480px;
+}
+
 .metric-card,
 .service-card,
 .team-card,
@@ -230,15 +241,17 @@ h2 {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
   align-items: stretch;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .service-card,
@@ -265,6 +278,26 @@ h2 {
   font-weight: 700;
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .team-photo {
+    cursor: pointer;
+  }
+
+  .team-card .bio {
+    max-height: 0;
+    margin-top: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  }
+
+  .team-photo:hover ~ .bio {
+    max-height: 32rem;
+    margin-top: 0.9rem;
+    opacity: 1;
+  }
+}
+
 .contact-card {
   padding: 1.5rem;
 }
@@ -281,20 +314,14 @@ h2 {
   font-size: 0.95rem;
 }
 
-@media (max-width: 1100px) {
-  .service-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 @media (max-width: 900px) {
   .hero-grid,
   .split-grid,
   .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
@@ -326,12 +353,50 @@ h2 {
 }
 
 @media (max-width: 640px) {
-  .service-grid,
   .team-grid {
-    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .team-card {
+    padding: 0.7rem;
   }
 
   .team-photo {
-    height: 220px;
+    height: 90px;
+    border-radius: 10px;
+    margin-bottom: 0.6rem;
+  }
+
+  .team-card h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .role {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .team-card p {
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 420px) {
+  .team-photo {
+    height: 70px;
+  }
+
+  .team-card h3 {
+    font-size: 0.82rem;
+  }
+
+  .role {
+    font-size: 0.68rem;
+  }
+
+  .team-card p {
+    font-size: 0.72rem;
   }
 }

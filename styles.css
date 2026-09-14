@@ -282,7 +282,7 @@ h2 {
   display: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
+@media (hover: hover) and (pointer: fine) and (min-width: 901px) {
   .team-photo {
     cursor: pointer;
   }
@@ -364,6 +364,15 @@ h2 {
     grid-template-columns: 1fr;
   }
 
+  .brand-logo {
+    height: 64px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+  }
+
   .team-photo {
     height: 260px;
   }
@@ -392,50 +401,58 @@ h2 {
 }
 
 @media (max-width: 640px) {
+  .brand-logo {
+    height: 52px;
+  }
+
   .team-grid {
-    gap: 0.6rem;
+    gap: 1.25rem;
   }
 
   .team-card {
-    padding: 0.7rem;
+    padding: 1rem;
   }
 
   .team-photo {
-    height: 90px;
-    border-radius: 10px;
-    margin-bottom: 0.6rem;
+    height: 220px;
+    border-radius: 12px;
+    margin-bottom: 0.8rem;
   }
 
   .team-card h3 {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     margin-bottom: 0.2rem;
   }
 
   .role {
-    font-size: 0.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
   }
 
   .team-card p {
-    font-size: 0.78rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 }
 
 @media (max-width: 420px) {
+  .brand-logo {
+    height: 44px;
+  }
+
   .team-photo {
-    height: 70px;
+    height: 180px;
   }
 
   .team-card h3 {
-    font-size: 0.82rem;
+    font-size: 0.95rem;
   }
 
   .role {
-    font-size: 0.68rem;
+    font-size: 0.78rem;
   }
 
   .team-card p {
-    font-size: 0.72rem;
+    font-size: 0.85rem;
   }
 }
